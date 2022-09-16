@@ -20,6 +20,10 @@ if(localStorage.favArray){
 async function fetchMovie() {
      
     const query = searchBar.value
+    if(query.length <= 2){
+        console.log('less tan 2',query)
+        return;
+    }else{
     // console.log(query)
     const API_KEY = "291bdbfa";
     const request = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
@@ -46,7 +50,7 @@ async function fetchMovie() {
 // 
 // }
    
-
+    }
 }
 
 function getMovie(movies){
