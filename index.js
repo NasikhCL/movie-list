@@ -26,7 +26,7 @@ async function fetchMovie() {
     }else{
     // console.log(query)
     const API_KEY = "291bdbfa";
-    const request = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
+    const request = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
     const response = await request.json();
     const movies = response.Search;
     
