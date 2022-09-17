@@ -74,9 +74,9 @@ function getMovie(movies){
 
                             // <div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined">favorite</span></div>`
                             if(favArray.includes(element.imdbID)){
-                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined  fill heart">favorite</span></div>`
+                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined fill">favorite</span></div>`
                             }else{
-                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined heart">favorite</span></div>`
+                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined">favorite</span></div>`
                             }
                             main.appendChild(card);
     // let carddocument.getElementsByClassName('card').addEventListener('click', showDetails(element.imdbID))

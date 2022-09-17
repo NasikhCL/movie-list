@@ -168,7 +168,7 @@ nav {
 /* fav btn */
 
 
-.material-symbols-outlined.heart {
+.material-symbols-outlined {
     font-size: 35px;
   font-variation-settings:
   'FILL' 0,
@@ -177,6 +177,7 @@ nav {
   'opsz' 48
 }
 .material-symbols-outlined:hover {
+    transform: scale(1.2);
     font-variation-settings:
     'FILL' 1
 
