@@ -100,7 +100,7 @@ function favCheck(id){
     // console.log(id);
     favArray.push(id);
     favBtn.childNodes[0].classList.add('fill');
-    favBtn.childNodes[0].classList.add('colo');
+
     console.log('fav added ',favArray)
     
     }
