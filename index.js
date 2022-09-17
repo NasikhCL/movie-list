@@ -27,6 +27,7 @@ async function fetchMovie() {
     // console.log(query)
     const API_KEY = "291bdbfa";
     const request = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
+    // console.log(request)
     const response = await request.json();
     const movies = response.Search;
     
@@ -62,20 +63,20 @@ function getMovie(movies){
     card.innerHTML = `<a href="./details.html?${element.imdbID}">
                             <div class="cardImageContainer">
                                 
-                                <img src="${element.Poster}" class="cardImage" alt="">            
+                                <img src="${element.Poster}" class="cardImage" alt="poster Image not available right now!">            
                             </div>
                                  <div class="cardDetails">
                                     <div class="hide">${element.imdbID}</div>
-                                    <div class="movieName"><h3>${element.Title}</div>    
+                                    <div class="movieName"><h3>${element.Title}</h3></div>    
                                 </div>
                      </a>`
                            
 
                             // <div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined">favorite</span></div>`
                             if(favArray.includes(element.imdbID)){
-                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined fill">favorite</span></div>`
+                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined  fill heart">favorite</span></div>`
                             }else{
-                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined">favorite</span></div>`
+                                card.innerHTML += `<div class="favIcon" id="${element.imdbID}"  onclick='favCheck("${element.imdbID}")'><span class="material-symbols-outlined heart">favorite</span></div>`
                             }
                             main.appendChild(card);
     // let carddocument.getElementsByClassName('card').addEventListener('click', showDetails(element.imdbID))
@@ -99,6 +100,7 @@ function favCheck(id){
     // console.log(id);
     favArray.push(id);
     favBtn.childNodes[0].classList.add('fill');
+    favBtn.childNodes[0].classList.add('colo');
     console.log('fav added ',favArray)
     
     }

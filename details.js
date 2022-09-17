@@ -116,13 +116,21 @@ function getMovieDetails(details){
                             <div class="movie-details-container">
                                 <div class="movie-details">
                                     <h1>${details.Title}</h1>
-                                    <p><span>${details.Year}</span> <span>${details.Runtime}</span> <span>${details.imdbRating}</span> <span>${details.Country}</span></p>
-                                    <p>${details.Plot}</p>
-                                    <p>Genre: ${details.Genre}</p>
-                                    <p>language: ${details.Language}</p>
-                                    <p>Director:   ${details.Director}</p>
-                                    <p>Writers:   ${details.Writer}</p>
-                                    <p>Actors:  ${details.Actors}</p>
+                                    <p class="movie-mini-details">
+                                        <span class="material-symbols-outlined">calendar_month</span>
+                                        <span>${details.Year}</span>
+                                        <span class="material-symbols-outlined">timer</span>
+                                        <span>${details.Runtime}</span>
+                                        <span class="material-symbols-outlined fill">grade</span>
+                                        <span>${details.imdbRating}</span>
+                                        <span class="material-symbols-outlined">public</span>
+                                        <span>${details.Country}</span></p>
+                                    <p class="movie-details-description">${details.Plot}</p>
+                                    <p><span class="movie-mini-details">Genre: </span> ${details.Genre}</p>
+                                    <p><span class="movie-mini-details">language: </span> ${details.Language}</p>
+                                    <p><span class="movie-mini-details">Director: </span> ${details.Director}</p>
+                                    <p><span class="movie-mini-details">Writers: </span> ${details.Writer}</p>
+                                    <p><span class="movie-mini-details">Actors: </span> ${details.Actors}</p>
                                 </div>
                                 
                             </div>`

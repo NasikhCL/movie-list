@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: sans-serif;
 }
 a{
     text-decoration: none;
@@ -48,7 +49,7 @@ nav {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .card{
@@ -57,7 +58,7 @@ nav {
     justify-content: flex-start;
     align-items: baseline;
     width: 250px;
-    height: 350px;
+    height: 360px;
     background-color: darkslategray;
     border-radius: 0 0 21px 21px;
     /* border: 2px solid black; */
@@ -79,7 +80,8 @@ nav {
 .cardDetails{
     
     display: flex;
-    justify-content: center;
+    margin-left: 15px;
+    /* justify-content: fle; */
     padding-top: 17px;
 
     /* align-items: flex-end; */
@@ -96,7 +98,7 @@ nav {
     cursor: pointer;
 }
 .movieName{
-    width: 200px;
+    width: 170px;
 }
 
 .hide{
@@ -117,6 +119,7 @@ nav {
 }
 
 .details-page-container{
+    color: white;
     width: 95%;
     display: flex;
     flex-wrap: wrap;
@@ -137,7 +140,7 @@ nav {
 .movie-details-container{
     width: 70%;
     height: 500px;
-    background-color: yellow;
+    background-color: darkslategray;
     
 }
 .movie-details{
@@ -156,7 +159,7 @@ nav {
     .movie-details{
         width: 99%;
         height: 500px;
-        background-color: yellow;
+        /* background-color: darkslategray; */
     }
 
 }
@@ -165,7 +168,7 @@ nav {
 /* fav btn */
 
 
-.material-symbols-outlined {
+.material-symbols-outlined.heart {
     font-size: 35px;
   font-variation-settings:
   'FILL' 0,
@@ -182,4 +185,29 @@ nav {
     font-variation-settings:
     'FILL' 1
 
+}
+
+.movie-mini-details{
+    color: rgb(140, 137, 137);
+
+}
+.movie-mini-details > span{
+    vertical-align: middle;
+    /* margin-right: 20px; */
+}
+.movie-mini-details .material-symbols-outlined{
+
+    font-size: 20px;
+}
+
+.movie-details-description{
+    font-size: large;
+    font-family: sans-serif;
+    word-spacing: 5px;
+    line-height: 25px;
+    margin-bottom: 40px;
+}
+
+.colo{
+    color:blue
 }
