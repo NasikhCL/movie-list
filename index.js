@@ -1,4 +1,4 @@
-const searchBar = document.getElementById('search');
+const searchBar = document.getElementById('search-bar');
 const main = document.getElementById('main')
 // let html;
 let cards = document.getElementsByClassName('card');

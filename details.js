@@ -1,6 +1,25 @@
 const mainContainer =document.getElementById('main-container')
+
+
+let favArray= [];
+
+if(localStorage.favArray){
+    localStorage.getItem("favArray", JSON.stringify(favArray));
+    let parsedJson = JSON.parse(localStorage.favArray);
+    // console.log((parsedJson));
+    for(let i = 0; i <parsedJson.length;i++){
+        favArray.push(parsedJson[i]);
+    }
+    console.log(favArray);
+
+    
+}
+
+
+
+
 function showDetails(){
-const url = window.location.href
+const url = window.location.href;
 
 console.log(url)
 const strs = url.split('?');
@@ -124,7 +143,10 @@ function getMovieDetails(details){
                                         <span class="material-symbols-outlined fill">grade</span>
                                         <span>${details.imdbRating}</span>
                                         <span class="material-symbols-outlined">public</span>
-                                        <span>${details.Country}</span></p>
+                                        <span>${details.Country}</span>
+                                        
+                                    </p>
+                                        
                                     <p class="movie-details-description">${details.Plot}</p>
                                     <p><span class="movie-mini-details">Genre: </span> ${details.Genre}</p>
                                     <p><span class="movie-mini-details">language: </span> ${details.Language}</p>
@@ -134,12 +156,43 @@ function getMovieDetails(details){
                                 </div>
                                 
                             </div>`
+
+                            if(favArray.includes(details.imdbID)){
+                                detailsContainer.innerHTML += `<div class="details-favIcon" id="${details.imdbID}"  onclick='favCheck("${details.imdbID}")'><span class="material-symbols-outlined fill">favorite</span></div>`
+                            }else{
+                                detailsContainer.innerHTML += `<div class="details-favIcon" id="${details.imdbID}"  onclick='favCheck("${details.imdbID}")'><span class="material-symbols-outlined">favorite</span></div>`
+                            }
     mainContainer.appendChild(detailsContainer);
     // let carddocument.getElementsByClassName('card').addEventListener('click', showDetails(element.imdbID))
     
 
 }
 
+
+
+function favCheck(id){
+    // const foo = document.querySelector('#foo')  
+    // foo.addEventListener('click', (event) => {  
+    // id.preventDefault();  
+// });
+    const favBtn = document.getElementById(id)
+    // console.log(favBtn.childNodes[0])
+    if(favArray.includes(id)){
+        favArray = favArray.filter(e => e !== id)
+        favBtn.childNodes[0].classList.remove('fill');
+        console.log('fav removed ', favArray);
+    }else{
+
+    // console.log(this)
+    // console.log(id);
+    favArray.push(id);
+    favBtn.childNodes[0].classList.add('fill');
+
+    console.log('fav added ',favArray)
+    
+    }
+    localStorage.setItem("favArray", JSON.stringify(favArray));
+}
 
 // http://www.omdbapi.com/?i=tt1349853
 
