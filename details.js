@@ -152,7 +152,7 @@ function getMovieDetails(details){
                                     <p><span class="movie-mini-details">language: </span> ${details.Language}</p>
                                     <p><span class="movie-mini-details">Director: </span> ${details.Director}</p>
                                     <p><span class="movie-mini-details">Writers: </span> ${details.Writer}</p>
-                                    <p><span class="movie-mini-details">Actors: </span> ${details.Actors}</p>
+                                    <p><span class="movie-mini-details pb-20">Actors: </span> ${details.Actors}</p>
                                 </div>
                                 
                             </div>`
