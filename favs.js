@@ -12,10 +12,19 @@ if(localStorage.favArray){
 
     
 }
+// if(main.childNodes.length == 0){
+//     let display = document.createElement('h1');
+//     display.innerText = `No Favourite item to show!`
+//     main.appendChild(display)
+   
+// }
+
+
 
 function showFavs(){
+    
     if(favArray.length == 0){   
-        console.log('nothig')
+        console.log(main.childNodes)
         let display = document.createElement('h1');
         display.innerText = `No Favourite item to show!`
         main.appendChild(display)
@@ -73,7 +82,7 @@ function getMovie(element){
                             main.appendChild(card);
     // let carddocument.getElementsByClassName('card').addEventListener('click', showDetails(element.imdbID))
     
-
+                        
 }
 
 function favCheck(id){
@@ -100,3 +109,5 @@ function favCheck(id){
     }
     localStorage.setItem("favArray", JSON.stringify(favArray));
 }
+
+showFavs();
